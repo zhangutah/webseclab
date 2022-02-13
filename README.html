@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="web-security-lab">Web Security Lab</h1>
+<h2 id="setup">Setup</h2>
+<ol>
+<li>Install <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a>;</li>
+<li>Download a pre-built SEED VM from <a href="https://drive.google.com/file/d/138fqx0F8bThLm9ka8cnuxmrD6irtz_4m/view?usp=sharing">Google Drive</a> or <a href="https://seed.nyc3.cdn.digitaloceanspaces.com/SEED-Ubuntu20.04.zip">Direct Download Link</a></li>
+<li>Create a new VM from the pre-built VM disk.</li>
+</ol>
+<h3 id="create-a-lab-vm">Create a lab VM</h3>
+<ul>
+<li>Open the VirtualBox, click &quot;New&quot;</li>
+</ul>
+<p><img src="./images/1.png" alt="1"></p>
+<ul>
+<li>Create a Virtual Machine as the picture shows</li>
+</ul>
+<p><img src="./images/2.png" alt="2"></p>
+<ul>
+<li>Choose the &quot;Use an existing virtual hard disk file&quot; , and the hard disk file is the pre-built VM disk file downloaded above.</li>
+</ul>
+<p><img src="./images/3.png" alt="3"></p>
+<ul>
+<li>Start the Virtual Machine</li>
+</ul>
+<h3 id="set-up-the-web-security-environment-xss">Set up the Web Security environment (XSS)</h3>
+<p>Inside the Lab VM:</p>
+<ol>
+<li>Open a Terminal</li>
+<li>Download the required file: <code>wget --no-check-certificate -c https://seedsecuritylabs.org/Labs_20.04/Files/Web_XSS_Elgg/Labsetup.zip</code></li>
+<li>Run <code>unzip Labsetup.zip &amp;&amp; cd Labsetup</code></li>
+<li>Edit the hosts file, and add a line at the end of the <code>/etc/hosts</code> file, eg: <code>echo 10.9.0.5        www.seed-server.com | sudo tee -a /etc/hosts </code></li>
+<li>Run <code>docker-compose up -d</code></li>
+<li>Open a browser, and visit <code>www.seed-server.com</code></li>
+<li>Username:<code>alice</code>, Password: <code>seedalice</code>; or Username: <code>boby</code>, Password: <code>seedboby</code></li>
+</ol>
+<h3 id="set-up-the-web-security-environment-csrf">Set up the Web Security environment (CSRF)</h3>
+<p>Inside the Lab VM:</p>
+<ol>
+<li>Open a Terminal</li>
+<li>Download the required file: <code>wget --no-check-certificate -c https://seedsecuritylabs.org/Labs_20.04/Files/Web_CSRF_Elgg/Labsetup.zip</code></li>
+<li>Run <code>unzip Labsetup.zip &amp;&amp; cd Labsetup</code></li>
+<li>Edit the hosts file, and add a line at the end of the <code>/etc/hosts</code> file, eg: <code>echo 10.9.0.5        www.seed-server.com | sudo tee -a /etc/hosts </code>， <code>echo 10.9.0.5 www.example32.com | sudo tee -a /etc/hosts</code>, <code>10.9.0.105 www.attacker32.com</code></li>
+<li>Run <code>docker-compose up -d</code></li>
+<li>Open a browser, and visit <code>www.seed-server.com</code></li>
+<li>Username:<code>alice</code>, Password: <code>seedalice</code>; or Username: <code>samy</code>, Password: <code>seedsamy</code></li>
+<li>Edit the attacker's pages: run <code>dockps</code> to check the container &quot;attacker&quot;'s id, and use <code>docksh &lt;container id&gt;</code> to edit attacker's html inside a container. eg:</li>
+</ol>
+<pre class="hljs"><code><div>[02/13/22]seed@VM:~/.../Labsetup$ dockps
+53856dffc574  attacker-10.9.0.105
+ca925c10bf2c  elgg-10.9.0.5
+50ea207fc673  mysql-10.9.0.6
+[02/13/22]seed@VM:~/.../Labsetup$ docksh 53856dffc574
+root@53856dffc574:/<span class="hljs-comment"># cd /var/www/attacker/</span>
+root@53856dffc574:/var/www/attacker<span class="hljs-comment"># nano addfriend.html</span>
+</div></code></pre>
+<p><img src="./images/5.png" alt="5"></p>
+<h2 id="discover-xss-vulnerabilities">Discover XSS vulnerabilities</h2>
+<h3 id="task-1-display-an-alert-window-when-visiting-a-users-profile">Task 1: Display an Alert Window when visiting a user's profile</h3>
+<p>You can edit Boby's profile from this link: <code>http://www.seed-server.com/profile/boby/edit</code></p>
+<p>Make some changes, so that an Alert Window will be prompted:</p>
+<p><img src="./images/4.png" alt="4"></p>
+<h3 id="task-2-stealing-cookies-from-the-victims-machine">Task 2: Stealing Cookies from the Victim’s Machine</h3>
+<p>Boby commented on a post of Alice, when Alice views the comment, Alice's cookie will be stolen.</p>
+<p>You may need to write some Javascript code to send the victim's cookie to your server</p>
+<h3 id="task-3-defeating-xss-attacks-using-csp">Task 3: Defeating XSS Attacks Using CSP</h3>
+<p>Share your solutions.</p>
+<h2 id="discover-csrf-vulnerabilities">## Discover CSRF vulnerabilities</h2>
+<h3 id="task-1-csrf-attack-using-get-request">Task 1: CSRF Attack using GET Request</h3>
+<p>Alice and Samy. Samy wants to become a friend to Alice, but Alice refuses to add him to her Elgg friend list. Samy decides to use the CSRF attack to
+achieve his goal. He sends Alice an URL (via an email or a posting in Elgg); Alice, curious about it, clicks on the URL, which leads her to Samy’s web site: www.attacker32.com. Pretend that you are Samy, describe how you can construct the content of the web page, so as soon as Alice visits the web page, Samy is added to the friend list of Alice (assuming Alice has an active session with Elgg).</p>
+<p>You need to edit the <code>addfriend.html</code> insider the <code>attacker-10.9.0.105</code> container, and the page can be accessed from <code>http://www.attacker32.com/addfriend.html</code></p>
+<h3 id="task-2-csrf-attack-using-post-request">Task 2: CSRF Attack using POST Request</h3>
+<p>Samy plans to use a CSRF attack to modify Alice's profile.</p>
+<h3 id="task-3-defense">Task 3: Defense</h3>
+<p>CSRF token.</p>
+
+</body>
+</html>

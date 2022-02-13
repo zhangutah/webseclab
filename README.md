@@ -1,5 +1,8 @@
 # Web Security Lab
 
+## Credits
+The tasks posted in this repo are borrowed from the SEED Labs: https://seedsecuritylabs.org/labs.html. The credits go to Prof. Wenliang Du and his group at Syracuse.
+
 ## Setup 
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads);

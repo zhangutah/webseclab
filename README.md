@@ -76,10 +76,6 @@ Boby commented on a post of Alice, when Alice views the comment, Alice's cookie 
 
 You may need to write some Javascript code to send the victim's cookie to your server
 
-### Task 3: Defeating XSS Attacks Using CSP
-
-Share your solutions.
-
 ## Discover CSRF vulnerabilities
 
 ### Task 1: CSRF Attack using GET Request
@@ -92,7 +88,3 @@ You need to edit the `addfriend.html` insider the `attacker-10.9.0.105` containe
 ### Task 2: CSRF Attack using POST Request
 
 Samy plans to use a CSRF attack to modify Alice's profile.
-
-### Task 3: Defense
-
-CSRF token.

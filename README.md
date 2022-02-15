@@ -9,6 +9,8 @@ Setup
 2. Download a pre-built SEED VM from [Google Drive](https://drive.google.com/file/d/138fqx0F8bThLm9ka8cnuxmrD6irtz_4m/view?usp=sharing) or [Direct Download Link](https://seed.nyc3.cdn.digitaloceanspaces.com/SEED-Ubuntu20.04.zip)
 3. Create a new VM from the pre-built VM disk.
 
+### The VM's USERNAME: seed, PASSWORD: dees
+
 ### Create a lab VM
 
 * Open the VirtualBox, click "New"

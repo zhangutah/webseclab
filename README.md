@@ -3,7 +3,9 @@
 ## Credits
 The tasks posted in this repo are borrowed from the SEED Labs: https://seedsecuritylabs.org/labs.html. The credits go to Prof. Wenliang Du and his group at Syracuse.
 
-Setup 
+## Setup 
+
+(For VMWare user, please refer to "VMWareSetup.md" )
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads);
 2. Download a pre-built SEED VM from [Google Drive](https://drive.google.com/file/d/138fqx0F8bThLm9ka8cnuxmrD6irtz_4m/view?usp=sharing) or [Direct Download Link](https://seed.nyc3.cdn.digitaloceanspaces.com/SEED-Ubuntu20.04.zip)

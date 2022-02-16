@@ -48,7 +48,7 @@ Inside the Lab VM:
 1. Open a Terminal
 2. Download the required file: `wget --no-check-certificate -c https://seedsecuritylabs.org/Labs_20.04/Files/Web_CSRF_Elgg/Labsetup.zip`
 3. Run `unzip Labsetup.zip && cd Labsetup`
-4. Edit the hosts file, and add a line at the end of the `/etc/hosts` file, eg: `echo 10.9.0.5        www.seed-server.com | sudo tee -a /etc/hosts `; `echo 10.9.0.5 www.example32.com | sudo tee -a /etc/hosts`; `10.9.0.105 www.attacker32.com`
+4. Edit the hosts file, and add a line at the end of the `/etc/hosts` file, eg: `echo 10.9.0.5        www.seed-server.com | sudo tee -a /etc/hosts `; `echo 10.9.0.5 www.example32.com | sudo tee -a /etc/hosts`; `echo 10.9.0.105 www.attacker32.com | sudo tee -a /etc/hosts`
 5. Run `docker-compose up -d`
 6. Open a browser, and visit `www.seed-server.com`
 7. Username:`alice`, Password: `seedalice`; or Username: `samy`, Password: `seedsamy`

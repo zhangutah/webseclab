@@ -29,6 +29,30 @@ The tasks posted in this repo are borrowed from the SEED Labs: https://seedsecur
 
 * Start the Virtual Machine
 
+### Frequently asked questions
+
+**I finished the first experiment and want to do the second one, but there are problems with the service startup**
+
+When you complete your first experiment (such as XSS or CSRF), please stop the former docker containers by executing `docker-compose down ` under the "Labsetup" path. ( or just reboot the VM )  Then follow the "Set up the Web Security environment" instructions. 
+![](images/9.png)
+
+It is recommended to complete different experiments under different paths. eg. download "Labsetup.zip" for XSS to `~/Downloads/XSS/` , and download "Labsetup.zip" for CSRF to `~/Downloads/CSRF/`
+
+**When visiting some hosts (`www.attacker32.com`, `www.seed-server.com`), the browser took me to GoDaddy**
+
+Please check the `/etc/hosts` file inside the VM, and make sure IP and hosts correct. It should be noted that these names might have already been added to the file due to some other
+labs. If they are mapped to different IP addresses, the old entries must be removed. You can also manually edit this file with `sudo`, and the sample looks like the following:
+
+```
+10.9.0.5 www.seed-server.com
+10.9.0.5 www.example32.com
+10.9.0.105 www.attacker32.com
+```
+
+And try use "New Private Window", because the cache will be cleared after closing the browser.
+
+![12](images/12.png)
+
 ### Set up the Web Security environment (XSS)
 
 Inside the Lab VM:
@@ -40,6 +64,8 @@ Inside the Lab VM:
 5. Run `docker-compose up -d`
 6. Open a browser, and visit `www.seed-server.com`
 7. Username:`alice`, Password: `seedalice`; or Username: `boby`, Password: `seedboby`
+
+（Run `docker-compose down` to shut down the server, if you finished this section. ）
 
 ### Set up the Web Security environment (CSRF)
 
@@ -145,6 +171,18 @@ Ted     50000               seedted     110000 11/3     24343244
 ![6](./images/6.png)
 
 You need to execute a new SQL statement using the SQL injection vulnerability.
+
+HINT: You can simply use curl to verify SQL Injection vulnerabilities, eg. `curl 'www.seed-server.com/unsafe_home.php?username=alice%27&Password=11'`. You will find that the server says there is an SQL statement error:
+
+![10](images/10.png)
+
+The PHP code `unsafe_home.php`, located in the `/var/www/SQL_Injection directory` inside the www docker container, is used to conduct user authentication. Think about why this problem occurs by locating the relevant php code.
+
+![11](images/11.png)
+
+You also need to think about this question, why did I enter my username as `admin'#` and the server directly let me log in, no matter what password I input ?
+
+`http://www.seed-server.com/unsafe_home.php?username=admin%27%23&Password=anypass`
 
 ### Task 2: SQL Injection Attack on UPDATE Statement
 

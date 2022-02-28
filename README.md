@@ -190,6 +190,9 @@ The PHP code was implemented in `unsafe_edit_backend.php` file.
 
 Use SQL injection vulnerability to modify any user's information.
 
+## Solutions for Reference
+
+[Solutions](https://github.com/zhangutah/webseclab/blob/main/Solutions.md)
 
 ## License
 The experiments involved in this course are from Syracuse SEED labs, and on this basis, they are modified to adapt to the environment of the class. The modified experimental documents still follow the GNU Free Documentation License.
